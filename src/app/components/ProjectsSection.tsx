@@ -36,41 +36,6 @@ const projects = [
     tags: ['AI', 'IoT', 'Local LLM', 'Python', 'Personal Project'],
     link: '#',
   },
-  {
-    title: 'E-Commerce Redesign',
-    description: 'Complete redesign of a fashion e-commerce platform, improving conversion rates by 45%.',
-    image: 'https://images.unsplash.com/photo-1539278383962-a7774385fa02?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxmYXNoaW9uJTIwc2hvcHBpbmclMjBvbmxpbmV8ZW58MXx8fHwxNzczNTkwNTc5fDA&ixlib=rb-4.1.0&q=80&w=1080',
-    tags: ['E-Commerce', 'Mobile', 'Web'],
-    link: '#',
-  },
-  {
-    title: 'Healthcare App',
-    description: 'Patient-centered mobile app for managing appointments, medications, and health records.',
-    image: 'https://images.unsplash.com/photo-1767449441925-737379bc2c4d?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxoZWFsdGhjYXJlJTIwbWVkaWNhbCUyMGFwcHxlbnwxfHx8fDE3NzM1OTA1ODB8MA&ixlib=rb-4.1.0&q=80&w=1080',
-    tags: ['Mobile', 'Healthcare', 'iOS/Android'],
-    link: '#',
-  },
-  {
-    title: 'SaaS Platform',
-    description: 'Enterprise project management tool with collaborative features and AI-powered insights.',
-    image: 'https://images.unsplash.com/photo-1680781632910-3afb25316c34?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxwcm9qZWN0JTIwbWFuYWdlbWVudCUyMHdvcmtzcGFjZXxlbnwxfHx8fDE3NzM1OTA1ODB8MA&ixlib=rb-4.1.0&q=80&w=1080',
-    tags: ['SaaS', 'Enterprise', 'Collaboration'],
-    link: '#',
-  },
-  {
-    title: 'Brand Identity System',
-    description: 'Complete design system and component library for a global tech startup.',
-    image: 'https://images.unsplash.com/photo-1769149068959-b11392164add?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxkZXNpZ24lMjBzeXN0ZW0lMjBjb21wb25lbnRzfGVufDF8fHx8MTc3MzU1Mjc4NHww&ixlib=rb-4.1.0&q=80&w=1080',
-    tags: ['Design System', 'Branding', 'Components'],
-    link: '#',
-  },
-  {
-    title: 'Social Media Platform',
-    description: 'Next-gen social networking app focusing on meaningful connections and mental wellness.',
-    image: 'https://images.unsplash.com/photo-1675352161918-2dc701738691?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxzb2NpYWwlMjBtZWRpYSUyMGNvbm5lY3Rpb258ZW58MXx8fHwxNzczNTkwNTgwfDA&ixlib=rb-4.1.0&q=80&w=1080',
-    tags: ['Social', 'Mobile', 'Wellness'],
-    link: '#',
-  },
 ];
 
 export function ProjectsSection() {
@@ -91,7 +56,7 @@ export function ProjectsSection() {
           >
             Featured Projects
           </h2>
-          <div className="h-1 w-24 bg-gradient-to-r from-[#4a0404] to-transparent rounded-full" />
+          <div className="h-1 w-24 bg-gradient-to-r from-[#94002a] to-transparent rounded-full" />
         </motion.div>
 
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
@@ -101,7 +66,7 @@ export function ProjectsSection() {
               initial={{ opacity: 0, y: 50 }}
               animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 50 }}
               transition={{ delay: index * 0.1, duration: 0.6 }}
-              className="group relative bg-white/5 backdrop-blur-sm rounded-2xl overflow-hidden border border-white/10 hover:border-[#4a0404]/50 transition-all duration-500 hover:shadow-xl hover:shadow-[#4a0404]/20"
+              className="group relative bg-white/5 backdrop-blur-sm rounded-2xl overflow-hidden border border-white/10 hover:border-[#94002a]/50 transition-all duration-500 hover:shadow-xl hover:shadow-[#94002a]/20"
               style={{
                 transformStyle: 'preserve-3d',
               }}
@@ -113,13 +78,13 @@ export function ProjectsSection() {
                   alt={project.title}
                   className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
                 />
-                <div className="absolute inset-0 bg-gradient-to-t from-[#0a0101] via-[#0a0101]/50 to-transparent opacity-80 group-hover:opacity-60 transition-opacity duration-500" />
+                <div className="absolute inset-0 bg-gradient-to-t from-[#121212] via-[#121212]/50 to-transparent opacity-80 group-hover:opacity-60 transition-opacity duration-500" />
                 
                 {/* Hover overlay */}
                 <div className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-500">
                   <a
                     href={project.link}
-                    className="flex items-center gap-2 px-6 py-3 bg-[#4a0404] hover:bg-[#6a0606] text-white rounded-lg transition-all duration-300 transform translate-y-4 group-hover:translate-y-0 font-medium text-sm uppercase tracking-wide"
+                    className="flex items-center gap-2 px-6 py-3 bg-[#94002a] hover:bg-[#ad0031] text-white rounded-lg transition-all duration-300 transform translate-y-4 group-hover:translate-y-0 font-medium text-sm uppercase tracking-wide"
                     style={{ fontFamily: "'Plus Jakarta Sans', sans-serif" }}
                   >
                     <span>View Project</span>
@@ -153,7 +118,7 @@ export function ProjectsSection() {
               </div>
 
               {/* 3D hover effect - subtle gradient shift */}
-              <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none bg-gradient-to-br from-[#4a0404]/10 via-transparent to-transparent" />
+              <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none bg-gradient-to-br from-[#94002a]/10 via-transparent to-transparent" />
             </motion.div>
           ))}
         </div>

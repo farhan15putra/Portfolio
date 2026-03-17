@@ -21,7 +21,7 @@ export function FloatingNav({ activeSection }: FloatingNavProps) {
   };
 
   return (
-    <nav className="fixed bottom-8 left-1/2 -translate-x-1/2 z-50 bg-[#1a0505]/90 backdrop-blur-lg border border-[#4a0404]/30 rounded-full px-6 py-3 shadow-lg shadow-[#4a0404]/20">
+    <nav className="fixed bottom-8 left-1/2 -translate-x-1/2 z-50 bg-[#121212]/90 backdrop-blur-lg border border-[#94002a]/30 rounded-full px-6 py-3 shadow-lg shadow-[#94002a]/20">
       <ul className="flex items-center gap-2">
         {navItems.map((item) => {
           const Icon = item.icon;
@@ -31,8 +31,8 @@ export function FloatingNav({ activeSection }: FloatingNavProps) {
               <button
                 onClick={() => scrollToSection(item.id)}
                 className={`flex items-center gap-2 px-4 py-2 rounded-full transition-all duration-300 ${isActive
-                  ? 'bg-[#4a0404] text-white'
-                  : 'text-gray-400 hover:text-white hover:bg-[#4a0404]/50'
+                  ? 'bg-[#94002a] text-white'
+                  : 'text-gray-400 hover:text-white hover:bg-[#94002a]/50'
                   }`}
                 title={item.label}
               >

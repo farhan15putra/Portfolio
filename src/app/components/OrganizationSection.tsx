@@ -47,12 +47,12 @@ export function OrganizationSection() {
           >
             Experience
           </h2>
-          <div className="h-1 w-24 bg-gradient-to-r from-[#4a0404] to-transparent rounded-full" />
+          <div className="h-1 w-24 bg-gradient-to-r from-[#94002a] to-transparent rounded-full" />
         </motion.div>
 
         <div className="relative">
           {/* Timeline line */}
-          <div className="absolute left-0 md:left-8 top-0 bottom-0 w-px bg-gradient-to-b from-[#4a0404] via-[#4a0404]/50 to-transparent" />
+          <div className="absolute left-0 md:left-8 top-0 bottom-0 w-px bg-gradient-to-b from-[#94002a] via-[#94002a]/50 to-transparent" />
 
           <div className="space-y-12">
             {experiences.map((exp, index) => (
@@ -64,9 +64,9 @@ export function OrganizationSection() {
                 className="relative pl-8 md:pl-20"
               >
                 {/* Timeline dot */}
-                <div className="absolute left-[-8px] md:left-[24px] top-2 w-4 h-4 bg-[#4a0404] rounded-full border-4 border-[#0a0101] shadow-lg shadow-[#4a0404]/50" />
+                <div className="absolute left-[-8px] md:left-[24px] top-2 w-4 h-4 bg-[#94002a] rounded-full border-4 border-[#121212] shadow-lg shadow-[#94002a]/50" />
 
-                <div className="bg-white/5 backdrop-blur-sm rounded-2xl p-8 border border-white/10 hover:border-[#4a0404]/50 transition-all duration-500 hover:shadow-xl hover:shadow-[#4a0404]/10">
+                <div className="bg-white/5 backdrop-blur-sm rounded-2xl p-8 border border-white/10 hover:border-[#94002a]/50 transition-all duration-500 hover:shadow-xl hover:shadow-[#94002a]/10">
                   <div className="flex flex-col md:flex-row md:items-center md:justify-between mb-4 gap-2">
                     <h3
                       className="text-2xl text-white font-bold tracking-tight"
@@ -74,7 +74,7 @@ export function OrganizationSection() {
                     >
                       {exp.role}
                     </h3>
-                    <div className="flex items-center gap-2 text-[#4a0404] text-sm font-medium">
+                    <div className="flex items-center gap-2 text-[#94002a] text-sm font-medium">
                       <Calendar className="w-4 h-4" />
                       <span>{exp.period}</span>
                     </div>
@@ -94,7 +94,7 @@ export function OrganizationSection() {
                     <ul className="space-y-2">
                       {exp.achievements.map((achievement, achIndex) => (
                         <li key={achIndex} className="flex items-start gap-3 text-white/60 text-sm font-normal">
-                          <span className="text-[#4a0404] mt-1">▸</span>
+                          <span className="text-[#94002a] mt-1">▸</span>
                           <span>{achievement}</span>
                         </li>
                       ))}

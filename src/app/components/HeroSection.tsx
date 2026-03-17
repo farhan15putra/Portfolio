@@ -5,11 +5,8 @@ import portraitImage from '@/assets/profil.png';
 export function HeroSection() {
   return (
     <section id="hero" className="min-h-screen flex items-center justify-center px-6 md:px-12 lg:px-24 pt-20 md:pt-24 relative overflow-hidden">
-      {/* Ambient lighting - top left */}
-      <div className="absolute top-0 left-0 w-[500px] h-[500px] bg-[#4a0404]/80 rounded-full blur-[120px]" />
-
       {/* Ambient lighting - bottom right */}
-      <div className="absolute bottom-0 right-0 w-[600px] h-[600px] bg-[#4a0404]/20 rounded-full blur-[140px]" />
+      <div className="absolute bottom-0 right-0 w-[600px] h-[600px] bg-[#94002a]/20 rounded-full blur-[140px]" />
 
       <div className="max-w-7xl w-full mx-auto grid lg:grid-cols-2 gap-12 items-center relative z-10">
         {/* Left Content */}
@@ -33,7 +30,7 @@ export function HeroSection() {
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               transition={{ delay: 0.4, duration: 0.6 }}
-              className="text-xl md:text-2xl text-[#4a0404] font-medium tracking-tight"
+              className="text-xl md:text-2xl text-[#94002a] font-medium tracking-tight"
               style={{ fontFamily: "'Plus Jakarta Sans', sans-serif" }}
             >
               IT Student | IoT & AI Enthusiast | Building Real-World Tech Project
@@ -59,7 +56,7 @@ export function HeroSection() {
           >
             <a
               href="mailto:farhan15putra@gmail.com"
-              className="flex items-center gap-2 px-6 py-3 bg-[#4a0404] hover:bg-[#6a0606] text-white rounded-lg transition-all duration-300 hover:scale-105 font-medium text-sm uppercase tracking-wide"
+              className="flex items-center gap-2 px-6 py-3 bg-[#94002a] hover:bg-[#ad0031] text-white rounded-lg transition-all duration-300 hover:scale-105 font-medium text-sm uppercase tracking-wide"
               style={{ fontFamily: "'Plus Jakarta Sans', sans-serif" }}
             >
               <Mail className="w-4 h-4" />
@@ -93,6 +90,9 @@ export function HeroSection() {
           transition={{ delay: 0.4, duration: 1, ease: 'easeOut' }}
           className="relative flex justify-center lg:justify-end"
         >
+          {/* Ambient lighting - Behind Portrait */}
+          <div className="absolute top-[40%] left-1/2 -translate-x-1/2 -translate-y-1/2 w-[300px] h-[300px] lg:w-[400px] lg:h-[400px] bg-[#94002a]/60 rounded-full blur-[90px] pointer-events-none" />
+
           <div className="relative w-full max-w-md">
             {/* Portrait Image */}
             <img
@@ -100,15 +100,9 @@ export function HeroSection() {
               alt="Farhan Putra - IT Student"
               className="w-full h-auto object-contain"
               style={{
-                filter: 'brightness(0.98) contrast(1.05)'
-              }}
-            />
-
-            {/* Vignette overlay - fades to background at bottom */}
-            <div
-              className="absolute inset-0 pointer-events-none"
-              style={{
-                background: 'linear-gradient(to bottom, transparent 0%, transparent 60%, #0a0101 95%, #0a0101 100%)'
+                filter: 'brightness(0.98) contrast(1.05)',
+                maskImage: 'linear-gradient(to bottom, black 60%, transparent 100%)',
+                WebkitMaskImage: 'linear-gradient(to bottom, black 60%, transparent 100%)'
               }}
             />
           </div>

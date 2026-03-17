@@ -28,34 +28,48 @@ export function StickyHeader({ activeSection }: StickyHeaderProps) {
   };
 
   return (
-    <header className="fixed top-0 left-0 right-0 z-50 bg-[#0a0101]/40 backdrop-blur-xl border-b border-white/5">
-      <div className="max-w-7xl mx-auto px-6 md:px-12 lg:px-24">
-        <div className="flex items-center justify-between h-20">
+    <header className="fixed top-0 left-0 right-0 z-50 bg-[#121212]/40 backdrop-blur-xl border-b border-white/5">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 md:px-12 lg:px-24">
+        <div className="flex items-center justify-between h-16 sm:h-20">
           {/* Logo/Brand */}
           <button
             onClick={() => scrollToSection('hero')}
-            className="text-white font-bold text-xl tracking-tighter hover:text-[#4a0404] transition-colors duration-300"
+            className="shrink-0 text-white font-bold text-lg sm:text-xl tracking-tighter hover:text-[#ff006a] transition-colors duration-300 cursor-pointer"
             style={{ fontFamily: "'Plus Jakarta Sans', sans-serif" }}
           >
             PORTFOLIO.
           </button>
 
           {/* Navigation */}
-          <nav>
-            <ul className="flex items-center gap-3">
+          <nav className="min-w-0">
+            <ul className="flex items-center gap-0 sm:gap-1">
               {navItems.map((item) => {
                 const isActive = activeSection === item.id;
+                const Icon = item.icon;
                 return (
                   <li key={item.id}>
                     <button
                       onClick={() => scrollToSection(item.id)}
-                      className={`px-4 py-2 text-xs uppercase tracking-wide font-medium transition-all duration-300 rounded-lg ${isActive
-                        ? 'text-white bg-[#4a0404]'
-                        : 'text-white/60 hover:text-white hover:bg-white/5'
-                        }`}
+                      className={`group relative flex items-center gap-1.5 px-2.5 sm:px-4 py-2 text-xs uppercase tracking-wide font-medium transition-colors duration-300 cursor-pointer ${
+                        isActive ? 'text-white' : 'text-white/50 hover:text-white'
+                      }`}
                       style={{ fontFamily: "'Plus Jakarta Sans', sans-serif" }}
+                      title={item.label}
                     >
-                      {item.label}
+                      <Icon size={14} className="shrink-0" />
+                      <span className="hidden sm:inline">{item.label}</span>
+
+                      {/* Underline animasi slide kiri → kanan */}
+                      <span
+                        className={`absolute bottom-0 left-2.5 sm:left-4 right-2.5 sm:right-4 h-px bg-[#94002a] origin-left transition-transform duration-300 ease-out ${
+                          isActive
+                            ? 'scale-x-100'
+                            : 'scale-x-0 group-hover:scale-x-100'
+                        }`}
+                        style={{
+                          boxShadow: '0 0 6px 1px rgba(148, 0, 42, 0.8), 0 0 12px 2px rgba(148, 0, 42, 0.4)',
+                        }}
+                      />
                     </button>
                   </li>
                 );

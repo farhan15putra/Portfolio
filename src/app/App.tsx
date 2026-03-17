@@ -38,7 +38,7 @@ export default function App() {
   }, []);
 
   return (
-    <div className="relative min-h-screen bg-[#1a1a1a] overflow-x-hidden">
+    <div className="relative min-h-screen bg-[#121212] overflow-x-hidden">
       {/* Cursor glow effect */}
       <CursorGlow />
 
@@ -79,12 +79,12 @@ export default function App() {
         }
         
         ::-webkit-scrollbar-thumb {
-          background: #4a0404;
+          background: #94002a;
           border-radius: 4px;
         }
         
         ::-webkit-scrollbar-thumb:hover {
-          background: #6a0606;
+          background: #ad0031;
         }
       `}</style>
     </div>
