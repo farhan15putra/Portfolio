@@ -1,5 +1,43 @@
-import { motion } from 'motion/react';
+import { motion, useMotionValue, useSpring, useTransform } from 'motion/react';
 import { useInView } from './hooks/useInView';
+
+function StatTiltCard({ children }: { children: React.ReactNode }) {
+  const x = useMotionValue(0);
+  const y = useMotionValue(0);
+
+  const rotateX = useSpring(useTransform(y, [-100, 100], [15, -15]), { stiffness: 150, damping: 20 });
+  const rotateY = useSpring(useTransform(x, [-100, 100], [-15, 15]), { stiffness: 150, damping: 20 });
+
+  function onMouseMove(event: React.MouseEvent<HTMLDivElement>) {
+    const rect = event.currentTarget.getBoundingClientRect();
+    const centerX = rect.left + rect.width / 2;
+    const centerY = rect.top + rect.height / 2;
+    x.set(event.clientX - centerX);
+    y.set(event.clientY - centerY);
+  }
+
+  function onMouseLeave() {
+    x.set(0);
+    y.set(0);
+  }
+
+  return (
+    <motion.div
+      onMouseMove={onMouseMove}
+      onMouseLeave={onMouseLeave}
+      style={{
+        rotateX,
+        rotateY,
+        transformStyle: 'preserve-3d',
+      }}
+      className="perspective-1000"
+    >
+      <div style={{ transform: 'translateZ(20px)' }}>
+        {children}
+      </div>
+    </motion.div>
+  );
+}
 
 export function AboutSection() {
   const { ref, isInView } = useInView({ threshold: 0.2 });
@@ -19,7 +57,7 @@ export function AboutSection() {
           >
             About Me
           </h2>
-          
+
           <div className="h-1 w-24 bg-gradient-to-r from-[#94002a] to-transparent rounded-full" />
 
           <div className="space-y-6 text-white/70 text-lg leading-relaxed font-normal" style={{ fontFamily: "'Plus Jakarta Sans', sans-serif" }}>
@@ -48,26 +86,30 @@ export function AboutSection() {
             </motion.p>
           </div>
 
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
-            transition={{ delay: 0.5, duration: 0.6 }}
-            className="grid grid-cols-2 md:grid-cols-4 gap-6 pt-8"
-          >
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-6 pt-8">
             {[
               { label: 'Academic Year', value: '3rd' },
-              { label: 'Projects Built', value: '15+' },
+              { label: 'Projects Built', value: '4' },
               { label: 'Organizations', value: '2' },
-              { label: 'Tech Stacks', value: '10+' },
+              { label: 'Core Skills', value: '10+' },
             ].map((stat, index) => (
-              <div key={index} className="text-center p-6 bg-white/5 backdrop-blur-sm rounded-2xl border border-white/10 hover:border-[#94002a]/50 transition-all duration-300">
-                <div className="text-4xl text-[#94002a] mb-2 font-bold tracking-tighter" style={{ fontFamily: "'Plus Jakarta Sans', sans-serif" }}>
-                  {stat.value}
-                </div>
-                <div className="text-sm text-white/60 font-medium uppercase tracking-wide" style={{ fontFamily: "'Plus Jakarta Sans', sans-serif" }}>{stat.label}</div>
-              </div>
+              <motion.div
+                key={index}
+                initial={{ opacity: 0, y: 20 }}
+                animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
+                transition={{ delay: 0.5 + index * 0.1, duration: 0.6 }}
+              >
+                <StatTiltCard>
+                  <div className="text-center p-6 bg-white/5 backdrop-blur-sm rounded-2xl border border-white/10 hover:border-[#94002a]/50 transition-all duration-300 shadow-lg hover:shadow-[#94002a]/10">
+                    <div className="text-4xl text-[#94002a] mb-2 font-bold tracking-tighter" style={{ fontFamily: "'Plus Jakarta Sans', sans-serif" }}>
+                      {stat.value}
+                    </div>
+                    <div className="text-sm text-white/60 font-medium uppercase tracking-wide" style={{ fontFamily: "'Plus Jakarta Sans', sans-serif" }}>{stat.label}</div>
+                  </div>
+                </StatTiltCard>
+              </motion.div>
             ))}
-          </motion.div>
+          </div>
         </motion.div>
       </div>
     </section>

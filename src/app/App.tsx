@@ -3,12 +3,16 @@ import { CursorGlow } from './components/CursorGlow';
 import { StickyHeader } from './components/StickyHeader';
 import { HeroSection } from './components/HeroSection';
 import { AboutSection } from './components/AboutSection';
-import { ProjectsSection } from './components/ProjectsSection';
+import { ProjectsSection, projects } from './components/ProjectsSection';
+import { ProjectDetailModal } from './components/ProjectDetailModal';
 import { OrganizationSection } from './components/OrganizationSection';
 import { ContactSection } from './components/ContactSection';
 
+import { InteractiveGrid } from './components/ui/InteractiveGrid';
+
 export default function App() {
   const [activeSection, setActiveSection] = useState('hero');
+  const [selectedProjectId, setSelectedProjectId] = useState<string | null>(null);
 
   useEffect(() => {
     const sections = ['hero', 'about', 'projects', 'organization', 'contact'];
@@ -38,7 +42,12 @@ export default function App() {
   }, []);
 
   return (
-    <div className="relative min-h-screen bg-[#121212] overflow-x-hidden">
+    <div className="relative min-h-screen bg-[#080808] overflow-x-hidden">
+      {/* Interactive Background Grid */}
+      <div className="fixed inset-0 z-1 pointer-events-none">
+        <InteractiveGrid />
+      </div>
+      
       {/* Cursor glow effect */}
       <CursorGlow />
 
@@ -49,15 +58,26 @@ export default function App() {
       <main className="relative z-10">
         <HeroSection />
         <AboutSection />
-        <ProjectsSection />
+        <ProjectsSection 
+          onProjectSelect={(id) => setSelectedProjectId(id)} 
+          selectedId={selectedProjectId}
+        />
         <OrganizationSection />
         <ContactSection />
       </main>
+
+      {/* Global Project Detail Modal */}
+      <ProjectDetailModal 
+        project={projects.find(p => p.id === selectedProjectId) || null}
+        isOpen={selectedProjectId !== null}
+        onClose={() => setSelectedProjectId(null)}
+      />
 
       {/* Global styles for fonts */}
       <style>{`
         body {
           font-family: 'Plus Jakarta Sans', 'Inter', sans-serif;
+          background-color: #080808;
         }
         
         h1, h2, h3, h4, h5, h6 {
@@ -67,24 +87,6 @@ export default function App() {
         /* Smooth scrolling */
         html {
           scroll-behavior: smooth;
-        }
-        
-        /* Hide scrollbar but keep functionality */
-        ::-webkit-scrollbar {
-          width: 8px;
-        }
-        
-        ::-webkit-scrollbar-track {
-          background: #3b3b3bff;
-        }
-        
-        ::-webkit-scrollbar-thumb {
-          background: #94002a;
-          border-radius: 4px;
-        }
-        
-        ::-webkit-scrollbar-thumb:hover {
-          background: #ad0031;
         }
       `}</style>
     </div>
