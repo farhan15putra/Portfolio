@@ -137,7 +137,7 @@ export function ProjectsSection({ onProjectSelect, selectedId }: ProjectsSection
               initial={{ opacity: 0, y: 50 }}
               animate={isInView ? { opacity: 1, y: 0 } : {}}
               transition={{ delay: index * 0.1, duration: 0.6 }}
-              className="h-full cursor-none"
+              className="h-full cursor-pointer"
               onClick={() => onProjectSelect(project.id)}
             >
               <ProjectTiltCard disabled={selectedId !== null}>

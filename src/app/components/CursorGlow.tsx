@@ -42,7 +42,7 @@ export function CursorGlow() {
 
   return (
     <div
-      className="pointer-events-none fixed inset-0 z-[100] transition-opacity duration-300"
+      className="pointer-events-none fixed inset-0 z-[5] transition-opacity duration-300"
       style={{
         background: `radial-gradient(300px circle at ${smoothPosition.x}px ${smoothPosition.y}px, rgba(200, 80, 80, 0.6), rgba(150, 50, 50, 0.4) 25%, rgba(100, 30, 30, 0.2) 50%, rgba(74, 4, 4, 0.05) 75%, transparent)`,
         filter: 'blur(60px)',
