@@ -88,7 +88,7 @@ export function AboutSection() {
 
           <div className="grid grid-cols-2 md:grid-cols-4 gap-6 pt-8">
             {[
-              { label: 'Academic Year', value: '3rd' },
+              { label: 'Semester', value: '4th' },
               { label: 'Projects Built', value: '4' },
               { label: 'Organizations', value: '2' },
               { label: 'Core Skills', value: '10+' },

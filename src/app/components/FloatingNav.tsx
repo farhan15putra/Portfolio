@@ -1,4 +1,4 @@
-import { Home, User, Briefcase, Building2, Mail } from 'lucide-react';
+import { Home, User, Briefcase, Building2, Mail, Award, Wrench } from 'lucide-react';
 
 interface FloatingNavProps {
   activeSection: string;
@@ -8,6 +8,8 @@ export function FloatingNav({ activeSection }: FloatingNavProps) {
   const navItems = [
     { id: 'hero', label: 'Home', icon: Home },
     { id: 'about', label: 'About', icon: User },
+    { id: 'skills', label: 'Skills', icon: Wrench },
+    { id: 'certificates', label: 'Certificates', icon: Award },
     { id: 'projects', label: 'Projects', icon: Briefcase },
     { id: 'organization', label: 'Experience', icon: Building2 },
     { id: 'contact', label: 'Contact', icon: Mail },

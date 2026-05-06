@@ -3,6 +3,8 @@ import { CursorGlow } from './components/CursorGlow';
 import { StickyHeader } from './components/StickyHeader';
 import { HeroSection } from './components/HeroSection';
 import { AboutSection } from './components/AboutSection';
+import { CoreSkillsSection } from './components/CoreSkillsSection';
+import { CertificatesSection } from './components/CertificatesSection';
 import { ProjectsSection, projects } from './components/ProjectsSection';
 import { ProjectDetailModal } from './components/ProjectDetailModal';
 import { OrganizationSection } from './components/OrganizationSection';
@@ -15,7 +17,7 @@ export default function App() {
   const [selectedProjectId, setSelectedProjectId] = useState<string | null>(null);
 
   useEffect(() => {
-    const sections = ['hero', 'about', 'projects', 'organization', 'contact'];
+    const sections = ['hero', 'about', 'skills', 'certificates', 'projects', 'organization', 'contact'];
     const headerOffset = 120;
 
     const handleScroll = () => {
@@ -58,6 +60,8 @@ export default function App() {
       <main className="relative z-10">
         <HeroSection />
         <AboutSection />
+        <CoreSkillsSection />
+        <CertificatesSection />
         <ProjectsSection 
           onProjectSelect={(id) => setSelectedProjectId(id)} 
           selectedId={selectedProjectId}
