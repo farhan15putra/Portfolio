@@ -1,4 +1,5 @@
 import { useEffect, useState } from 'react';
+import { AnimatePresence } from 'motion/react';
 import { CursorGlow } from './components/CursorGlow';
 import { StickyHeader } from './components/StickyHeader';
 import { HeroSection } from './components/HeroSection';
@@ -11,8 +12,10 @@ import { OrganizationSection } from './components/OrganizationSection';
 import { ContactSection } from './components/ContactSection';
 
 import { InteractiveGrid } from './components/ui/InteractiveGrid';
+import { LoadingScreen } from './components/LoadingScreen';
 
 export default function App() {
+  const [isLoading, setIsLoading] = useState(true);
   const [activeSection, setActiveSection] = useState('hero');
   const [selectedProjectId, setSelectedProjectId] = useState<string | null>(null);
 
@@ -45,8 +48,15 @@ export default function App() {
 
   return (
     <div className="relative min-h-screen bg-[#080808] overflow-x-hidden">
-      {/* Interactive Background Grid */}
-      <div className="fixed inset-0 z-1 pointer-events-none">
+      <AnimatePresence mode="wait">
+        {isLoading && (
+          <LoadingScreen key="loading" onComplete={() => setIsLoading(false)} />
+        )}
+      </AnimatePresence>
+
+      <div className={!isLoading ? "opacity-100 transition-opacity duration-1000" : "opacity-0 h-screen overflow-hidden pointer-events-none"}>
+        {/* Interactive Background Grid */}
+        <div className="fixed inset-0 z-1 pointer-events-none">
         <InteractiveGrid />
       </div>
       
@@ -76,6 +86,7 @@ export default function App() {
         isOpen={selectedProjectId !== null}
         onClose={() => setSelectedProjectId(null)}
       />
+      </div>
 
       {/* Global styles for fonts */}
       <style>{`

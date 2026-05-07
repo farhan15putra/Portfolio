@@ -1,7 +1,7 @@
 import { motion } from 'motion/react';
 import { useInView } from './hooks/useInView';
 import { Mail, Linkedin, Github, Phone, Instagram } from 'lucide-react';
-import brandLogo from '@/assets/Logo 1.1.png';
+import brandLogo from '@/assets/Emblem.png';
 
 export function ContactSection() {
   const { ref, isInView } = useInView({ threshold: 0.3 });
@@ -79,10 +79,10 @@ export function ContactSection() {
           transition={{ delay: 0.8, duration: 0.6 }}
           className="text-center pt-12 border-t border-white/10"
         >
-          <img 
-            src={brandLogo} 
-            alt="Farhan Putra" 
-            className="w-16 h-16 object-contain mx-auto mb-6 opacity-30 grayscale hover:grayscale-0 hover:opacity-100 transition-all duration-500" 
+          <img
+            src={brandLogo}
+            alt="Farhan Putra"
+            className="w-32 h-32 object-contain mx-auto mb-6 opacity-30 grayscale hover:grayscale-0 hover:opacity-100 transition-all duration-500"
           />
           <p className="text-gray-500 text-sm font-normal" style={{ fontFamily: "'Plus Jakarta Sans', sans-serif" }}>
             © 2026 Farhan Putra. All rights reserved.
