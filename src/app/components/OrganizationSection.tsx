@@ -27,6 +27,26 @@ const experiences = [
       'Previously contributed as a Script Writer in the Vlogcast Division, preparing scripts for long-form podcast-style episodes (20+ minutes)',
     ],
   },
+  {
+    company: 'HMIT - Telkom University Jakarta',
+    role: 'Ketua Pelaksana – Grow with HMIT',
+    period: '2025',
+    description: 'Led the execution of the Grow with HMIT study group, an IoT-based project learning program for Information Technology students.',
+    achievements: [
+      'Led the execution of an IoT study group based on project-based learning for IT students',
+      'Coordinated the event concept, timeline, mentors, and final project showcase',
+    ],
+  },
+  {
+    company: 'Telkom University Jakarta',
+    role: 'Kepala Logistik – Stadium General INTECH',
+    period: '2024',
+    description: 'Responsible for managing equipment and technical needs for a large-scale university event.',
+    achievements: [
+      'Responsible for managing equipment and technical needs for a large-scale university event',
+      'Organized logistics distribution and ensured all event needs were fulfilled during execution',
+    ],
+  },
 ];
 
 export function OrganizationSection() {

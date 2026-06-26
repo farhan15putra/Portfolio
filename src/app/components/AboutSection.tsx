@@ -88,10 +88,10 @@ export function AboutSection() {
 
           <div className="grid grid-cols-2 md:grid-cols-4 gap-6 pt-8">
             {[
-              { label: 'Semester', value: '4th' },
-              { label: 'Projects Built', value: '4' },
-              { label: 'Organizations', value: '2' },
-              { label: 'Core Skills', value: '10+' },
+              { label: 'Semester', value: '3rd' },
+              { label: 'Projects Built', value: '5+' },
+              { label: 'Organizations', value: '4' },
+              { label: 'GPA / IPK', value: '3.92' },
             ].map((stat, index) => (
               <motion.div
                 key={index}

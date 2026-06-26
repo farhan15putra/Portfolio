@@ -44,7 +44,7 @@ export const projects: Project[] = [
   },
   {
     id: 'memory-game',
-    title: 'Precision Memory Hub',
+    title: 'Precision Memory Game',
     description: 'Hardware-based reflex trainer utilizing microcontroller logic and responsive input systems.',
     detailedDescription: 'This high-intensity hardware project utilizes Arduino logic to create a sophisticated reflex training system. By combining high-luminance LEDs with responsive button arrays, the hub generates complex, accelerating patterns designed to test and improve human cognitive processing and muscle memory.',
     image: memoryGameImg,
@@ -58,6 +58,15 @@ export const projects: Project[] = [
     detailedDescription: 'H.E.R.A (Heuristic Electronics Resource Assistant) represents the next step in local AI edge computing. Running a Large Language Model (LLM) entirely on local hardware, it provides secure, offline control of IoT clusters and PC infrastructure. It’s a testament to private-by-design automation, executing complex system commands through natural speech.',
     image: heraImg,
     tags: ['AI', 'Local LLM', 'Privacy', 'Python', 'Next-Gen'],
+    link: '#',
+  },
+  {
+    id: 'kubi-learning-toy',
+    title: 'KUBI – Interactive AI Learning Toy',
+    description: 'An interactive educational toy powered by ESP32 and AI that helps children learn English through voice interaction.',
+    detailedDescription: 'KUBI is an innovative educational toy that combines embedded systems with artificial intelligence to create an engaging language learning experience. Built around an ESP32 microcontroller, KUBI leverages AI integration to facilitate interactive English learning for children through natural voice interaction. The project bridges embedded hardware with intelligent software to deliver a playful, responsive companion that makes learning both fun and effective.',
+    image: '',
+    tags: ['ESP32', 'Embedded System', 'AI Integration', 'IoT', 'EdTech'],
     link: '#',
   },
 ];
@@ -145,11 +154,21 @@ export function ProjectsSection({ onProjectSelect, selectedId }: ProjectsSection
                   {/* Image */}
                   <div className="relative h-64 overflow-hidden shrink-0">
                     <motion.div layoutId={`image-${project.id}`} className="w-full h-full">
-                      <ImageWithFallback
-                        src={project.image}
-                        alt={project.title}
-                        className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
-                      />
+                      {project.image ? (
+                        <ImageWithFallback
+                          src={project.image}
+                          alt={project.title}
+                          className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
+                        />
+                      ) : (
+                        <div className="w-full h-full bg-[#1a1a1a] flex items-center justify-center">
+                          <div className="w-16 h-16 rounded-2xl border border-white/10 flex items-center justify-center bg-white/5">
+                            <span className="text-white/20 text-3xl font-bold" style={{ fontFamily: "'Plus Jakarta Sans', sans-serif" }}>
+                              {project.title.charAt(0)}
+                            </span>
+                          </div>
+                        </div>
+                      )}
                     </motion.div>
                     <div className="absolute inset-0 bg-gradient-to-t from-[#121212] via-[#121212]/50 to-transparent opacity-80" />
                     

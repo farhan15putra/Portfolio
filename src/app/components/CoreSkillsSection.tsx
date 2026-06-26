@@ -5,24 +5,24 @@ import { Layout, Cpu, Database, BrainCircuit } from 'lucide-react';
 // YOU CAN EASILY EDIT YOUR SKILLS HERE
 export const coreSkills = [
   {
-    category: "Front End",
-    icon: Layout,
-    skills: ["React.js", "Next.js", "Tailwind CSS", "Framer Motion", "TypeScript"]
-  },
-  {
-    category: "IoT",
+    category: "IoT & Embedded",
     icon: Cpu,
-    skills: ["ESP32 / ESP8266", "Arduino", "MQTT", "Raspberry Pi", "C/C++"]
+    skills: ["ESP32 / ESP8266", "Arduino IDE", "MQTT", "C/C++", "Sensor Integration"]
   },
   {
-    category: "Data",
-    icon: Database,
-    skills: ["Python", "Pandas & NumPy", "SQL", "Data Visualization", "Jupyter"]
-  },
-  {
-    category: "AI / ML",
+    category: "AI & Data",
     icon: BrainCircuit,
-    skills: ["TensorFlow / PyTorch", "Scikit-Learn", "Computer Vision", "NLP", "OpenAI API"]
+    skills: ["Python", "Data Analysis", "Local LLM", "AI Integration", "Pandas & NumPy"]
+  },
+  {
+    category: "Web & Front End",
+    icon: Layout,
+    skills: ["React JS", "Vue JS", "TypeScript", "Tailwind CSS", "Vite"]
+  },
+  {
+    category: "Data & Backend",
+    icon: Database,
+    skills: ["SQL", "Data Visualization", "REST API", "Jupyter", "Git"]
   }
 ];
 
