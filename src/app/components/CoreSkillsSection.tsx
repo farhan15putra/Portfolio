@@ -4,24 +4,24 @@ import { Layout, Cpu, Database, BrainCircuit } from 'lucide-react';
 
 export const coreSkills = [
   {
-    category: "IoT & Embedded Systems",
+    category: "IoT & Automation",
     icon: Cpu,
-    skills: ["ESP32 / ESP8266", "Arduino", "MQTT", "C/C++", "Sensors & Automation"]
+    skills: ["ESP32", "Arduino", "Sensors", "Relay Control", "Smart Home"]
   },
   {
     category: "Frontend Development",
     icon: Layout,
-    skills: ["React", "TypeScript", "JavaScript", "Responsive UI", "Modern CSS"]
+    skills: ["React.js", "Vue.js", "JavaScript", "Responsive UI", "Tailwind CSS"]
   },
   {
-    category: "IoT Interfaces",
-    icon: Database,
-    skills: ["REST API", "WebSockets", "Data Visualization", "Device Dashboards", "Git"]
-  },
-  {
-    category: "Product Craft",
+    category: "AI & Programming",
     icon: BrainCircuit,
-    skills: ["UI Architecture", "Component Design", "Interaction Design", "Performance", "Accessibility"]
+    skills: ["Python", "Local LLM", "Voice Interaction", "System Automation", "Privacy-First AI"]
+  },
+  {
+    category: "Web & Deployment",
+    icon: Database,
+    skills: ["Supabase", "Vercel", "Frontend Integration", "Web Prototypes", "Data Communication"]
   }
 ];
 
