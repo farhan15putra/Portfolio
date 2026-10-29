@@ -10,6 +10,9 @@ import devlifeImg from '@/assets/DevlifeClickerGame.png';
 import memoryGameImg from '@/assets/MemoryGame.jpeg';
 import heraImg from '@/assets/hera.png';
 import DemoVideoRelay from '@/assets/DemoVideoRelay.mp4';
+import erpHhImg from '@/assets/projects/ERP-HH.png';
+import dapurKembarImg from '@/assets/projects/Catalogue Dapur Kembar.png';
+import rtvImg from '@/assets/projects/RTV.png';
 
 export interface Project {
   id: string;
@@ -37,7 +40,7 @@ export const projects: Project[] = [
     id: 'devlife-clicker',
     title: 'DevLife Clicker Game',
     description: 'A professional-grade simulation game where players experience the grind of creative development.',
-    detailedDescription: 'DevLife Clicker is an engaging corporate simulation game that puts players in the shoes of a rising developer. Built with React.js and Tailwind CSS, it features high-performance state management and a polished UI to simulate the complexities of professional coding — from workstation upgrades to managing "coffee-fueled" productivity cycles.',
+    detailedDescription: 'DevLife Clicker is an engaging corporate simulation game that puts players in the shoes of a rising developer. Built with React.js and Tailwind CSS, it features high-performance state management and a polished UI to simulate the complexities of professional coding, from workstation upgrades to managing "coffee-fueled" productivity cycles.',
     image: devlifeImg,
     tags: ['React.js', 'Tailwind CSS', 'Simulation', 'Web App'],
     link: '#',
@@ -54,20 +57,38 @@ export const projects: Project[] = [
   {
     id: 'hera-assistant',
     title: 'H.E.R.A - AI Core',
-    description: 'Heuristic Electronics Resource Assistant — a privacy-first local LLM for system automation.',
+    description: 'Heuristic Electronics Resource Assistant, a privacy-first local LLM for system automation.',
     detailedDescription: 'H.E.R.A (Heuristic Electronics Resource Assistant) represents the next step in local AI edge computing. Running a Large Language Model (LLM) entirely on local hardware, it provides secure, offline control of IoT clusters and PC infrastructure. It’s a testament to private-by-design automation, executing complex system commands through natural speech.',
     image: heraImg,
     tags: ['AI', 'Local LLM', 'Privacy', 'Python', 'Next-Gen'],
     link: '#',
   },
   {
-    id: 'kubi-learning-toy',
-    title: 'KUBI – Interactive AI Learning Toy',
-    description: 'An interactive educational toy powered by ESP32 and AI that helps children learn English through voice interaction.',
-    detailedDescription: 'KUBI is an innovative educational toy that combines embedded systems with artificial intelligence to create an engaging language learning experience. Built around an ESP32 microcontroller, KUBI leverages AI integration to facilitate interactive English learning for children through natural voice interaction. The project bridges embedded hardware with intelligent software to deliver a playful, responsive companion that makes learning both fun and effective.',
-    image: '',
-    tags: ['ESP32', 'Embedded System', 'AI Integration', 'IoT', 'EdTech'],
+    id: 'erp-business-management',
+    title: 'ERP Business Management System',
+    description: 'Frontend interface for an ERP website built for Handi Hendrawan\'s Business.',
+    detailedDescription: 'Developed the frontend interface for an ERP website for Handi Hendrawan\'s Business. Responsible for building the user interface and integrating the frontend with the backend to support application functionality and data communication.',
+    image: erpHhImg,
+    tags: ['Frontend Developer', 'Vue.js', 'Business Application'],
     link: '#',
+  },
+  {
+    id: 'dapur-kembar-catalog',
+    title: 'Dapur Kembar: UMKM Product Catalog',
+    description: 'A product catalog website prototype for Dapur Kembar, an Indonesian MSME.',
+    detailedDescription: 'Developed a prototype product catalog website for Dapur Kembar, an Indonesian MSME. Responsible for frontend development, database setup and integration using Supabase, and application deployment through Vercel.',
+    image: dapurKembarImg,
+    tags: ['Full-Stack Developer', 'React.js', 'Supabase', 'Vercel', 'Web Application Prototype'],
+    link: 'https://dapurkembar-official.vercel.app/',
+  },
+  {
+    id: 'rtv-ecommerce-prototype',
+    title: 'RTV: E-commerce UI Prototype',
+    description: 'A frontend e-commerce prototype for Rumah Tua Vape (RTV), prepared for client presentation.',
+    detailedDescription: 'Designed and developed a frontend prototype for an e-commerce website for Rumah Tua Vape (RTV), intended for presentation to the client. Focused on the user interface and visual presentation. The prototype was deployed on Vercel; backend functionality has not been implemented.',
+    image: rtvImg,
+    tags: ['Frontend Developer', 'React.js', 'Vercel', 'E-commerce UI Prototype', 'No Backend'],
+    link: 'https://rumah-tua-vape.vercel.app/',
   },
 ];
 

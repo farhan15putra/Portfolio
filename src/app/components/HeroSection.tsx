@@ -1,14 +1,42 @@
-import { useRef } from 'react';
+import { useRef, useState } from 'react';
 import { motion, useScroll, useTransform, useSpring } from 'motion/react';
 import { Mail, Linkedin, MapPin } from 'lucide-react';
-import portraitImage from '@/assets/profil.png';
+import defaultPortrait from '@/assets/2.webp';
+import revealPortrait from '@/assets/1.webp';
 import { TextReveal } from './ui/TextReveal';
 import { MagneticWrapper } from './ui/MagneticWrapper';
 
 export function HeroSection() {
+  const [brushPoints, setBrushPoints] = useState<Array<{ x: number; y: number; opacity: number }>>([]);
+
+  function handlePortraitMove(event: React.MouseEvent<HTMLDivElement>) {
+    const rect = event.currentTarget.getBoundingClientRect();
+    const point = {
+      x: ((event.clientX - rect.left) / rect.width) * 100,
+      y: ((event.clientY - rect.top) / rect.height) * 100,
+      opacity: 1,
+    };
+
+    setBrushPoints((points) => [
+      ...points.slice(-24).map((item, index, items) => ({
+        ...item,
+        opacity: Math.max(0.12, ((index + 1) / items.length) * 0.82),
+      })),
+      point,
+    ]);
+  }
+
+  const brushMask = brushPoints.length
+    ? brushPoints.flatMap(({ x, y, opacity }) => [
+      `radial-gradient(ellipse 18% 2.4% at ${x - 3}% ${y - 5}%, rgb(0 0 0 / ${opacity}) 0%, transparent 80%)`,
+      `radial-gradient(ellipse 20% 2.8% at ${x + 1}% ${y}%, rgb(0 0 0 / ${opacity}) 0%, transparent 80%)`,
+      `radial-gradient(ellipse 16% 2% at ${x + 4}% ${y + 5}%, rgb(0 0 0 / ${opacity}) 0%, transparent 80%)`,
+    ]).join(', ')
+    : 'radial-gradient(ellipse 0% 0% at 50% 50%, transparent 0%, transparent 100%)';
+
   const containerRef = useRef<HTMLElement>(null);
   const { scrollY } = useScroll();
-  
+
   // Parallax effect for portrait
   const y1 = useTransform(scrollY, [0, 500], [0, 100]);
   const y2 = useTransform(scrollY, [0, 500], [0, -50]);
@@ -36,7 +64,7 @@ export function HeroSection() {
               className="text-xl md:text-2xl text-[#94002a] font-medium tracking-tight"
               style={{ fontFamily: "'Plus Jakarta Sans', sans-serif" }}
             >
-              IT Student | IoT & AI Enthusiast | Building Real-World Tech Project
+              IoT Developer | Frontend Engineer | Building Connected Digital Experiences
             </motion.p>
           </div>
 
@@ -47,7 +75,7 @@ export function HeroSection() {
             className="text-white/70 text-lg max-w-xl leading-relaxed font-normal"
             style={{ fontFamily: "'Plus Jakarta Sans', sans-serif" }}
           >
-            Bridging hardware and software through purposeful innovation. Focused on the synergy of IoT, AI, and Data for real-world problem solving.
+            I design and build connected products that bring together reliable IoT systems and thoughtful frontend experiences. From sensor data to polished interfaces, I turn technical ideas into useful digital products.
           </motion.p>
 
           {/* Contact Links */}
@@ -98,19 +126,36 @@ export function HeroSection() {
           <div className="absolute top-[40%] left-1/2 -translate-x-1/2 -translate-y-1/2 w-[300px] h-[300px] lg:w-[400px] lg:h-[400px] bg-[#94002a]/60 rounded-full blur-[90px] pointer-events-none" />
           <div className="absolute top-[40%] left-1/2 -translate-x-1/2 -translate-y-1/2 w-[100px] h-[100px] lg:w-[160px] lg:h-[160px] bg-white/70 rounded-full blur-[60px] pointer-events-none" />
 
-          <div className="relative w-full max-w-md">
-            {/* Portrait Image */}
+          <div
+            className="relative w-full max-w-md overflow-hidden"
+            onMouseMove={handlePortraitMove}
+            onMouseLeave={() => setBrushPoints([])}
+          >
             <motion.img
               initial={{ opacity: 0, scale: 0.9 }}
               animate={{ opacity: 1, scale: 1 }}
               transition={{ delay: 0.4, duration: 1, ease: 'easeOut' }}
-              src={portraitImage}
+              src={defaultPortrait}
               alt="Farhan Putra - IT Student"
-              className="w-full h-auto object-contain relative z-10"
+              className="block w-full h-auto object-contain relative z-10"
               style={{
                 filter: 'brightness(0.98) contrast(1.05)',
                 maskImage: 'linear-gradient(to bottom, black 60%, transparent 100%)',
                 WebkitMaskImage: 'linear-gradient(to bottom, black 60%, transparent 100%)'
+              }}
+            />
+            <img
+              src={revealPortrait}
+              alt=""
+              aria-hidden="true"
+              className="absolute inset-0 z-20 w-full h-full object-contain pointer-events-none"
+              style={{
+                filter: 'brightness(0.98) contrast(1.05)',
+                maskImage: brushMask,
+                WebkitMaskImage: brushMask,
+                maskComposite: 'add',
+                WebkitMaskComposite: 'source-over',
+                transition: 'mask-image 120ms ease-out, -webkit-mask-image 120ms ease-out'
               }}
             />
           </div>

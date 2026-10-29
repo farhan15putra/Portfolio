@@ -129,18 +129,18 @@ export function ProjectDetailModal({ project, isOpen, onClose }: ProjectDetailMo
                         </motion.p>
                       </div>
 
-                      <div className="pt-8 w-full">
-                        <a 
+                      {project.link !== '#' && (
+                        <a
                           href={project.link}
                           target="_blank"
                           rel="noopener noreferrer"
                           className="w-full flex items-center justify-center gap-4 px-8 py-5 bg-[#94002a] hover:bg-[#ad0031] text-white rounded-2xl font-black uppercase tracking-[0.2em] transition-all duration-500 shadow-2xl shadow-[#94002a]/40 group text-sm relative overflow-hidden"
                         >
                           <div className="absolute inset-0 bg-gradient-to-r from-white/0 via-white/10 to-white/0 -translate-x-full group-hover:translate-x-full transition-transform duration-1000" />
-                          <span>Review Source Code</span>
+                          <span>Review Project</span>
                           <ExternalLink className="w-5 h-5 group-hover:rotate-12 transition-transform" />
                         </a>
-                      </div>
+                      )}
                     </div>
                   </div>
                 </div>

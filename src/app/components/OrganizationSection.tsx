@@ -29,7 +29,7 @@ const experiences = [
   },
   {
     company: 'HMIT - Telkom University Jakarta',
-    role: 'Ketua Pelaksana – Grow with HMIT',
+    role: 'Event Lead, Grow with HMIT',
     period: '2025',
     description: 'Led the execution of the Grow with HMIT study group, an IoT-based project learning program for Information Technology students.',
     achievements: [
@@ -39,7 +39,7 @@ const experiences = [
   },
   {
     company: 'Telkom University Jakarta',
-    role: 'Kepala Logistik – Stadium General INTECH',
+    role: 'Logistics Lead, Stadium General INTECH',
     period: '2024',
     description: 'Responsible for managing equipment and technical needs for a large-scale university event.',
     achievements: [

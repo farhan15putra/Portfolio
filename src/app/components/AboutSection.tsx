@@ -66,7 +66,7 @@ export function AboutSection() {
               animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
               transition={{ delay: 0.2, duration: 0.6 }}
             >
-              I am an Information Technology student at Telkom University Jakarta driven by the synergy of IoT, AI, and Data Analysis. I believe in learning by doing—transforming complex ideas into functional prototypes through constant experimentation and refinement.
+              I am an Information Technology student at Telkom University Jakarta focused on IoT and frontend development. I turn hardware signals, device data, and user needs into clear, responsive, and engaging web experiences.
             </motion.p>
 
             <motion.p
@@ -74,7 +74,7 @@ export function AboutSection() {
               animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
               transition={{ delay: 0.3, duration: 0.6 }}
             >
-              My current focus lies in bridging hardware and software, from building ESP32-based automation to developing local AI assistants that streamline development workflows. I am passionate about leveraging data-driven insights to create intelligent systems that solve real-world problems.
+              My IoT work centers on ESP32 systems, sensors, automation, and device communication. On the frontend, I build responsive interfaces with React, TypeScript, and modern CSS that make complex data easy to understand and interact with.
             </motion.p>
 
             <motion.p
@@ -82,16 +82,16 @@ export function AboutSection() {
               animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
               transition={{ delay: 0.4, duration: 0.6 }}
             >
-              Beyond my technical projects, I am active in academic organizations, fostering a culture of project-based learning among my peers. I thrive at the intersection of embedded technology and smart innovation, always looking for new ways to turn information into action.
+              I care about the details that connect both sides: stable data flows, intuitive interactions, accessible layouts, and visual systems that feel purposeful. I keep learning by shipping projects that connect physical devices with people through the web.
             </motion.p>
           </div>
 
           <div className="grid grid-cols-2 md:grid-cols-4 gap-6 pt-8">
             {[
-              { label: 'Semester', value: '3rd' },
-              { label: 'Projects Built', value: '5+' },
-              { label: 'Organizations', value: '4' },
-              { label: 'GPA / IPK', value: '3.92' },
+              { label: 'Focus', value: 'IoT' },
+              { label: 'Frontend Projects', value: '5+' },
+              { label: 'Connected Builds', value: '4' },
+              { label: 'GPA', value: '3.92' },
             ].map((stat, index) => (
               <motion.div
                 key={index}

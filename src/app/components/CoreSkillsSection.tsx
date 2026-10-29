@@ -2,27 +2,26 @@ import { motion } from 'motion/react';
 import { useInView } from './hooks/useInView';
 import { Layout, Cpu, Database, BrainCircuit } from 'lucide-react';
 
-// YOU CAN EASILY EDIT YOUR SKILLS HERE
 export const coreSkills = [
   {
-    category: "IoT & Embedded",
+    category: "IoT & Embedded Systems",
     icon: Cpu,
-    skills: ["ESP32 / ESP8266", "Arduino IDE", "MQTT", "C/C++", "Sensor Integration"]
+    skills: ["ESP32 / ESP8266", "Arduino", "MQTT", "C/C++", "Sensors & Automation"]
   },
   {
-    category: "AI & Data",
-    icon: BrainCircuit,
-    skills: ["Python", "Data Analysis", "Local LLM", "AI Integration", "Pandas & NumPy"]
-  },
-  {
-    category: "Web & Front End",
+    category: "Frontend Development",
     icon: Layout,
-    skills: ["React JS", "Vue JS", "TypeScript", "Tailwind CSS", "Vite"]
+    skills: ["React", "TypeScript", "JavaScript", "Responsive UI", "Modern CSS"]
   },
   {
-    category: "Data & Backend",
+    category: "IoT Interfaces",
     icon: Database,
-    skills: ["SQL", "Data Visualization", "REST API", "Jupyter", "Git"]
+    skills: ["REST API", "WebSockets", "Data Visualization", "Device Dashboards", "Git"]
+  },
+  {
+    category: "Product Craft",
+    icon: BrainCircuit,
+    skills: ["UI Architecture", "Component Design", "Interaction Design", "Performance", "Accessibility"]
   }
 ];
 

@@ -4,6 +4,8 @@ import { Award, ExternalLink } from 'lucide-react';
 
 // Import certificate assets
 import sertifikatMC from '@/assets/sertifikat/sertifikat MC.jpg';
+import sicImage from '@/assets/sertifikat/SIC.png';
+import aiImage from '@/assets/sertifikat/AI fundamental.png';
 import sicStage1 from '@/assets/sertifikat/Sertifikat SIC Stage 1_compressed.pdf';
 import sicStage2 from '@/assets/sertifikat/Sertifikat Stage 2 SIC_compressed.pdf';
 import sicStage3 from '@/assets/sertifikat/Sertifikat Stage 3 - Farhan Dwi Ananda Putra_compressed.pdf';
@@ -17,7 +19,7 @@ import secureNet from '@/assets/sertifikat/COURSERA-Secure Against Network Intru
 import incidentResponse from '@/assets/sertifikat/COURSERA-Introduction to Detection and Incident Response.pdf';
 import netOperations from '@/assets/sertifikat/COURSERA-Network Operations.pdf';
 
-// YOU CAN EASILY EDIT YOUR CERTIFICATES HERE
+// Certificate data
 export const certificates = [
   {
     id: "cert-sic",
@@ -25,7 +27,7 @@ export const certificates = [
     issuer: "Samsung",
     date: "2024",
     link: sicStage4,
-    image: sertifikatMC,
+    image: sicImage,
     pdfLinks: [
       { label: "Stage 1", url: sicStage1 },
       { label: "Stage 2", url: sicStage2 },
@@ -39,6 +41,7 @@ export const certificates = [
     issuer: "Coursera",
     date: "2024",
     link: aiFundamentals,
+    image: aiImage,
   },
   {
     id: "cert-gns",
@@ -46,6 +49,7 @@ export const certificates = [
     issuer: "Coursera",
     date: "2024",
     link: googleNetSec,
+    image: aiImage,
   },
   {
     id: "cert-net-arch",
@@ -53,6 +57,7 @@ export const certificates = [
     issuer: "Coursera",
     date: "2024",
     link: netArchitecture,
+    image: aiImage,
   },
   {
     id: "cert-net-mon",
@@ -60,6 +65,7 @@ export const certificates = [
     issuer: "Coursera",
     date: "2024",
     link: netMonitoring,
+    image: aiImage,
   },
   {
     id: "cert-sec-hard",
@@ -67,6 +73,7 @@ export const certificates = [
     issuer: "Coursera",
     date: "2024",
     link: secHardening,
+    image: aiImage,
   },
   {
     id: "cert-sec-net",
@@ -74,6 +81,7 @@ export const certificates = [
     issuer: "Coursera",
     date: "2024",
     link: secureNet,
+    image: aiImage,
   },
   {
     id: "cert-incident",
@@ -81,6 +89,7 @@ export const certificates = [
     issuer: "Coursera",
     date: "2024",
     link: incidentResponse,
+    image: aiImage,
   },
   {
     id: "cert-net-ops",
@@ -88,6 +97,7 @@ export const certificates = [
     issuer: "Coursera",
     date: "2024",
     link: netOperations,
+    image: aiImage,
   },
 ];
 
